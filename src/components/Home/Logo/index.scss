@@ -4,7 +4,7 @@
   height: 60px;
   position: absolute;
   top: 0;
-  right: 15%;
+  right: 40%;
   bottom: 0;
   left: auto;
   margin: auto;
@@ -27,12 +27,17 @@
     width: 100%;
     opacity: 0.3;
     opacity: 0;
-    transform: rotateZ(30deg);
+    // transform: rotateZ(30deg);
     z-index: 1;
   }
-}
 
-.svg-container {
-  stroke: #ffd700;
-  stroke-width: 10;
+  .svg-container {
+    stroke: #ffd700;
+    stroke-width: 10;
+
+    g {
+      fill: #000000;
+      stroke: none;
+    }
+  }
 }
