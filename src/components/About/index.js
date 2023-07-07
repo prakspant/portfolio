@@ -36,7 +36,7 @@ function About() {
           new project I undertake.
         </p>
         <p>
-          I shall keep updating this section with any unuique and self built projects of mine.
+          I shall keep updating my portfolio section with any unuique and self built projects of mine.
         </p>
       </div>
       <div className="stage-cube-cont">
