@@ -1,10 +1,13 @@
 import './index.scss';
 import {Loader} from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
+import emailjs from '@emailjs/browser'
+import { MapContainer, TileLayer, Circle, Popup } from 'react-leaflet';
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
+  const refForm = useRef();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -13,6 +16,28 @@ const Contact = () => {
 
     return () => clearTimeout(timer);
   }, [])
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'service_am4sec6',
+        'template_lhcocgi',
+        refForm.current,
+        'QCia-umSycBWRPJs2'
+      )
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
+  }
+
   return (
     <>
       <div className='container contact-page'>
@@ -30,7 +55,7 @@ const Contact = () => {
             I am passionate about web development and can talk about coding all day.
           </p>
           <div className="contact-form" >
-            <form>
+            <form ref={refForm} onSubmit={sendEmail}>
               <ul>
                 <li className='half'>
                   <input type='text' name='name' placeholder="Name" required />
@@ -50,6 +75,27 @@ const Contact = () => {
               </ul>
             </form>
           </div>
+        </div>
+        <div className='info-map'>
+          Prakhar Pant,
+          <br />
+          Australia
+          <br />
+          Clayton
+          <br />
+          Melbourne
+          <br />
+          <span>prakharpant288@gmail.com</span>
+        </div>
+        <div className='map-wrap'>
+          <MapContainer center={[-37.909705, 145.128789]} zoom={17}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Circle center={[-37.909705, 145.128789]} radius={100}>
+              <Popup>
+                This is the vicinity in which Prakhar dwells
+              </Popup>
+            </Circle>
+          </ MapContainer>
         </div>
       </div>
       <Loader type="pacman" />
