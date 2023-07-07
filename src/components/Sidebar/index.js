@@ -10,18 +10,18 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 function Sidebar() {
   return (
     <div className="nav-bar">
-      <Link className="logo" to="/">
+      <Link className="logo" to="/portfolio">
         <img src={LogoP} alt="logo" />
         <img src={LogoPSub} alt="LogoPSub" />
       </Link>
       <nav>
-        <NavLink exact="true" activeClassName="active" to="/">
+        <NavLink exact="true" activeClassName="active" to="/portfolio">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
-        <NavLink exact="true" activeClassName="active" className="about-link" to="/about">
+        <NavLink exact="true" activeClassName="active" className="about-link" to="/portfolio/about">
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
-        <NavLink exact="true" activeClassName="active" className="contact-link" to="/contact">
+        <NavLink exact="true" activeClassName="active" className="contact-link" to="/portfolio/contact">
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
       </nav>

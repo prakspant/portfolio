@@ -88,7 +88,7 @@ const Contact = () => {
           <span>prakharpant288@gmail.com</span>
         </div>
         <div className='map-wrap'>
-          <MapContainer center={[-37.909705, 145.128789]} zoom={17}>
+          <MapContainer center={[-37.909705, 145.128789]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Circle center={[-37.909705, 145.128789]} radius={100}>
               <Popup>
