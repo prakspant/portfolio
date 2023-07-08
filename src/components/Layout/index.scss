@@ -37,3 +37,9 @@
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
 }
+
+@media screen and (max-width: 760px){
+  .container {
+    left: 60px;
+  }
+}
