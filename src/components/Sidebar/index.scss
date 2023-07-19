@@ -95,6 +95,12 @@
     }
   }
 
+  &.portfolio-link{
+    &:after {
+      content: 'PORTFOLIO';
+    }
+  }
+
   &.active {
     svg {
       color: #ffd700;
